@@ -1,64 +1,65 @@
+# 🎨 StyledToast
 
-🎨 StyledToast
-A customizable Toast library for Android – featuring icons, custom backgrounds, multiple animations, vibration support, Loader Toasts, preset types (Success, Error, Warning, Info), and more!
+A customizable Toast library for Android – featuring icons, custom backgrounds, multiple animations, vibration support, loader toasts, preset types (Success, Error, Warning, Info), and more.
 
-🚀 Key Features
-✅ Beautiful toasts with icons
+---
 
-✅ Preset Toasts: Success, Error, Warning, Info
+## ✅ Key Features
 
-✅ Flexible custom toast using a Builder pattern
+- ✔️ Beautiful toasts with icons  
+- ✔️ Preset Toasts: `Success`, `Error`, `Warning`, `Info`  
+- ✔️ Flexible custom toast using a Builder pattern  
+- ✔️ Support for multiple animation types: `Slide`, `Fade`, `Pop`, `Bounce`  
+- ✔️ Loader Toast with dismiss option  
+- ✔️ Global Theme support for unified style  
+- ✔️ Vibration support on toast display  
+- ✔️ Rounded corners and RTL support  
+- ✔️ Custom duration (in milliseconds)
 
-✅ Support for multiple animation types (Slide, Fade, Pop, Bounce)
+---
 
-✅ Loader Toast with dismiss option
+## 📱 Demo Application
 
-✅ Global Theme support for unified style
+This project includes a **fully working demo app** (`:app` module)  
+that lets you interactively test all toast types:
 
-✅ Vibration support on toast display
+- Regular styled toasts  
+- Custom Builder toasts  
+- Loader toasts  
+- All animation types  
+- Toasts with vibration
 
-✅ Rounded corners and RTL (Right-to-Left) support
+> The demo app makes it easy to preview all features live.
 
-✅ Custom duration (any milliseconds)
+---
 
-📱 Demo Application
-This project includes a fully working demo app (:app module)
-where you can interactively test:
+## 🛠 Installation
 
-Regular styled toasts
+Add the library as a module or import it as an `.aar` file.  
+Don't forget to add this permission in your `AndroidManifest.xml`:
 
-Custom Builder toasts
-
-Loader toasts
-
-All animation types
-
-Toasts with vibration
-
-The demo app makes it easy to preview all features live.
-
-🛠 Installation
-Add the library as a module or import it as an .aar file.
-
-Add the required permission for vibration in your AndroidManifest.xml:
-
-xml
-Copy
-Edit
+```xml
 <uses-permission android:name="android.permission.VIBRATE" />
-✨ Usage
-Preset Toasts
-java
-Copy
-Edit
+```
+
+---
+
+## ✨ Usage Examples
+
+### 🔹 Preset Toasts
+
+```java
 StyledToast.preset(context, ToastType.SUCCESS, "Saved successfully!");
 StyledToast.preset(context, ToastType.ERROR, "Something went wrong!");
 StyledToast.preset(context, ToastType.WARNING, "This is a warning.");
 StyledToast.preset(context, ToastType.INFO, "FYI: Information message.");
-Custom Toast with Builder
-java
-Copy
-Edit
+```
+
+---
+
+### 🔹 Custom Toast (Builder)
+
+```java
 StyledToast.custom(context)
     .message("Hello World!")
     .backgroundColor(Color.DKGRAY)
@@ -68,51 +69,76 @@ StyledToast.custom(context)
     .duration(3000) // milliseconds
     .vibrate(true)
     .show();
-Loader Toast (With Auto Dismiss)
-java
-Copy
-Edit
+```
+
+---
+
+### 🔹 Loader Toast (with auto-dismiss)
+
+```java
 StyledToast.showLoader(context, "Uploading...");
 
 new Handler().postDelayed(() -> {
     StyledToast.dismissLoader();
     StyledToast.preset(context, ToastType.SUCCESS, "Upload complete!");
 }, 3000);
-Global Theme (Optional)
-java
-Copy
-Edit
+```
+
+---
+
+### 🔹 Global Theme
+
+```java
 StyledToast.setGlobalTheme(new StyledToastTheme()
     .setBackgroundColor(Color.BLACK)
     .setTextColor(Color.WHITE)
     .setFontSizeSp(16)
     .setCornerRadiusDp(20));
-Once set, all StyledToasts will inherit this theme unless explicitly overridden.
+```
 
-🎬 Supported Animation Types
+---
 
-Animation Type	Description
-SLIDE_IN_BOTTOM	Smooth slide from bottom
-FADE_IN	Soft fade-in with slight scaling
-POP_IN	Quick pop/bounce effect
-BOUNCE_IN	Springy bounce entrance
-Use like:
+## 🎬 Supported Animation Types
 
-java
-Copy
-Edit
-.animationType(AnimationType.POP_IN)
-📸 Screenshots
-(Screenshots of sample toasts can be added here.)
+| Type              | Description                      |
+|-------------------|----------------------------------|
+| `SLIDE_IN_BOTTOM` | Smooth slide from bottom         |
+| `FADE_IN`         | Soft fade-in with slight scaling |
+| `POP_IN`          | Fast pop/bounce effect           |
+| `BOUNCE_IN`       | Springy bounce entrance          |
 
-📋 Important Notes
-Vibration: Requires <uses-permission android:name="android.permission.VIBRATE" />
+Use via:
 
-Animations: Located inside res/anim folder
+```java
+.animationType(AnimationType.FADE_IN)
+```
 
-RTL Support: Built-in (layoutDirection="locale")
+---
 
-Custom Duration: Supports manual millisecond duration instead of just SHORT/LONG.
+## 📋 Notes
 
-📚 Credits
-Developed with ❤️ to enhance Android user experience with more modern and customizable toasts.
+- Vibration requires the permission in manifest  
+- Animations are stored under `res/anim`  
+- RTL support is built-in  
+- Duration is fully customizable (not limited to Toast.LENGTH_SHORT/Toast.LENGTH_LONG)
+
+---
+
+## 🧪 Screenshots
+
+> *(Coming soon — add screenshots here)*
+
+---
+
+## 🧱 Modules Structure
+
+```
+/styledtoast     → Library Module (reusable Toast logic)
+/app             → Demo Application (interactive testing)
+```
+
+---
+
+## 📚 Credits
+
+Created with ❤️ to improve user experience and toast styling for Android apps.
