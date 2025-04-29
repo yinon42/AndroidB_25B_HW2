@@ -124,9 +124,9 @@ Use via:
 
 ---
 
-## 🧪 Screenshots
+## 🧪 App Demo
 
-> *(Coming soon — add screenshots here)*
+https://drive.google.com/file/d/10B9vX7N7sIpbWlfdQyhx3qZXxyUkHaqi/view?usp=sharing
 
 ---
 
@@ -142,3 +142,8 @@ Use via:
 ## 📚 Credits
 
 Created with ❤️ to improve user experience and toast styling for Android apps.
+
+---
+
+## Link to a zip file of the project
+- https://drive.google.com/file/d/1qnyRi1rprSSu0CfYo93sA8Vl7wKCHfjt/view?usp=sharing
